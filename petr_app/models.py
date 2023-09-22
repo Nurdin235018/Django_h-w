@@ -43,7 +43,7 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=60)
     body = models.TextField()
-    category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='posts')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE,  related_name='posts')
     tags = models.ManyToManyField(Tag)
     created_at = models.DateTimeField(auto_now_add=True)
 
